@@ -44,6 +44,7 @@ blockquote {
     quotes: "\201C" "\201D" "\2018" "\2019";
     text-align: left;
     font-style: italic;
+    box-shadow: 10px 10px 6px 0 rgba(0, 0, 0, .5);
 }
 
 blockquote:before {
@@ -65,6 +66,29 @@ blockquote p {
     margin-right: 10px;
     padding-right: 10px;
     margin-top: -1em;
+}
+
+span.badge {
+    color: red;
+}
+
+ol.badge {
+    list-style: none;
+    padding: 0;
+}
+
+ol.badge li.one:before
+{
+    content: '❶';
+    color: red;
+    margin: 0 0.5em;    /* any design */
+}
+
+ol.badge li.two:before
+{
+    content: '❷';
+    color: red;
+    margin: 0 0.5em;    /* any design */
 }
 
 /** STEP STYLES **/
