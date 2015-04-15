@@ -154,7 +154,6 @@ img.square {
 img.front {
     z-index: 1;
     position: relative;
-    top: -70vmin;
 }
 
 .perfs {
