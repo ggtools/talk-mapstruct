@@ -175,16 +175,16 @@
     </div>
     <div class="step" data-rotate-x="0" data-rotate-y="0" data-rotate-z="135" data-scale="1" data-x="-3394.11" data-y="3394.11" data-z="0">
         <h2>Définition du mapper</h2>
-        <pre class="highlight code java"><span class="nd">@Mapper</span>
+        <pre class="highlight code java"><span data-jmpress="fade" class="nd">@Mapper</span>
 <span class="kd">public</span> <span class="kd">interface</span> <span class="nc">CarMapper</span> <span class="o">{</span>
-    <span class="nd">@Mappings</span><span class="o">({</span>
+    <span data-jmpress="fade"><span class="nd">@Mappings</span><span class="o">({</span>
             <span class="nd">@Mapping</span><span class="o">(</span><span class="n">source</span> <span class="o">=</span> <span
                     class="s">"make"</span><span class="o">,</span>
                      <span class="n">target</span> <span class="o">=</span> <span class="s">"manufacturer"</span><span class="o">),</span>
             <span class="nd">@Mapping</span><span class="o">(</span><span class="n">source</span> <span class="o">=</span> <span class="s">"numberOfSeats"</span><span
                     class="o">,</span>
                      <span class="n">target</span> <span class="o">=</span> <span class="s">"seatCount"</span><span class="o">)</span>
-    <span class="o">})</span>
+    <span class="o">})</span></span>
     <span class="n">CarDto</span> <span class="nf">carToCarDto</span><span class="o">(</span><span class="n">Car</span> <span
                     class="n">car</span><span class="o">);</span>
 <span class="o">}</span></pre>
@@ -220,24 +220,21 @@
     <div class="step" data-rotate-x="0" data-rotate-y="0" data-rotate-z="135" data-scale="1" data-x="-5656.85" data-y="5656.85" data-z="0">
         <h2>Utiliser un mapper</h2>
         <ul>
-            <li>Manuellement :</li>
-        </ul>
+            <li data-jmpress="fade">Manuellement :
         <pre class="highlight code java"><span class="n">Mappers</span><span class="o">.</span><span class="na">getMapper</span><span
-                class="o">(</span><span class="n">CarMapper</span><span class="o">.</span><span class="na">class</span><span class="o">);</span></pre>
-        <ul>
-            <li>Définir explicitement un framework d'injection :</li>
-        </ul><pre class="highlight code java"><span class="nd">@Mapper</span><span class="o">(</span><span class="n">componentModel</span> <span
+                class="o">(</span><span class="n">CarMapper</span><span class="o">.</span><span class="na">class</span><span class="o">);</span></pre></li>
+            <li data-jmpress="fade">Définir explicitement un framework d'injection :
+        <pre class="highlight code java"><span class="nd">@Mapper</span><span class="o">(</span><span class="n">componentModel</span> <span
             class="o">=</span> <span
             class="s">"cdi"</span><span class="o">)</span>
 <span class="nd">@Mapper</span><span class="o">(</span><span class="n">componentModel</span> <span class="o">=</span> <span
                 class="s">"spring"</span><span class="o">)</span>
 <span class="nd">@Mapper</span><span class="o">(</span><span class="n">componentModel</span> <span class="o">=</span> <span
-                class="s">"jsr330"</span><span class="o">)</span></pre>
-        <ul>
-            <li>Configurer le comportement par défaut :</li>
-        </ul>
+                class="s">"jsr330"</span><span class="o">)</span></pre></li>
+            <li data-jmpress="fade">Configurer le comportement par défaut :
         <pre class="highlight code properties"><span class="na">mapstruct.defaultComponentModel</span><span class="o">=</span><span
-                class="s">cdi</span></pre>
+                class="s">cdi</span></pre></li>
+        </ul>
     </div>
 
 
@@ -264,11 +261,9 @@
 
     <div class="step" data-rotate-x="0" data-rotate-y="0" data-rotate-z="180" data-scale="1" data-x="-4800" data-y="0" data-z="0">
         <h2>Définition du mapper</h2>
-        <pre class="highlight code java"><span class="nd">@Mapper</span><span
-                class="o">(</span><span class="n">componentModel</span> <span class="o">=</span> <span class="s">"default"</span><span
-                class="o">)</span>
+        <pre class="highlight code java"><span class="nd">@Mapper</span>
 <span class="kd">public</span> <span class="kd">interface</span> <span class="nc">CarMapper</span> <span class="o">{</span>
-    <span class="nd">@Mappings</span><span class="o">({</span>
+    <span data-jmpress="fade"><span class="nd">@Mappings</span><span class="o">({</span>
             <span class="nd">@Mapping</span><span class="o">(</span><span class="n">source</span> <span class="o">=</span> <span
                     class="s">"car.make"</span><span class="o">,</span>
                      <span class="n">target</span> <span class="o">=</span> <span class="s">"manufacturer"</span><span class="o">),</span>
@@ -278,7 +273,7 @@
             <span class="nd">@Mapping</span><span class="o">(</span><span class="n">source</span> <span class="o">=</span> <span class="s">"price.value"</span><span
                     class="o">,</span>
                      <span class="n">target</span> <span class="o">=</span> <span class="s">"price"</span><span class="o">)</span>
-    <span class="o">})</span>
+    <span class="o">})</span></span>
     <span class="n">CarDto</span> <span class="nf">carToCarDto</span><span class="o">(</span><span class="n">Car</span> <span
                     class="n">car</span><span class="o">,</span> <span class="n">CarPrice</span> <span class="n">price</span><span class="o">);</span>
 <span class="o">}</span></pre>
@@ -386,20 +381,21 @@
         <h2>Contournement</h2>
 
         <p>Utiliser un <em>builder</em></p><pre class="highlight code java"><span class="nd">@Mapper</span>
-<span class="kd">public</span> <span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">CarMapper</span> <span
+<span class="kd">public</span> <span data-jmpress="shake"><span class="kd">abstract</span> <span class="kd">class</span></span> <span class="nc">CarMapper</span> <span
                 class="o">{</span>
 
-    <span class="kd">public</span> <span class="n">CarDto</span> <span class="nf">carToCarDto</span><span class="o">(</span><span class="n">Car</span> <span
+    <span data-jmpress="fade"><span class="nd">@Mappings</span><span class="o">({</span><span class="nd">&hellip;</span><span class="o">})</span>
+    <span class="kd">protected</span> <span class="kd">abstract</span>
+        <span class="n">CarDtoBuilder</span> <span class="nf">carToCarDtoBuilder</span><span
+                class="o">(</span><span class="n">Car</span> <span class="n">car</span><span class="o">);</span></span>
+
+    <span data-jmpress="fade"><span class="kd">public</span> <span class="n">CarDto</span> <span class="nf">carToCarDto</span><span class="o">(</span><span class="n">Car</span> <span
                 class="n">car</span><span class="o">)</span> <span class="o">{</span>
         <span class="k">return</span> <span class="n">carToCarDtoBuilder</span><span class="o">(</span><span class="n">car</span><span
                 class="o">).</span><span class="na">createCarDto</span><span class="o">();</span>
-    <span class="o">}</span>
-
-    <span class="nd">@Mappings</span><span class="o">({</span><span class="nd">&hellip;</span><span class="o">})</span>
-    <span class="kd">protected</span> <span class="kd">abstract</span>
-        <span class="n">CarDtoBuilder</span> <span class="nf">carToCarDtoBuilder</span><span
-                class="o">(</span><span class="n">Car</span> <span class="n">car</span><span class="o">);</span>
-<span class="o">}</span></pre>
+    <span class="o">}</span></span>
+<span class="o">}</span>
+    </pre>
     </div>
 
 
